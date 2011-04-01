@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Concordion IDE Test Plugin
+Bundle-SymbolicName: org.concordion.ide.eclipse.test
+Bundle-Version: 1.0.0
+Bundle-Activator: org.concordion.id.eclipse.test.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.concordion.ide.eclipse,
+ org.junit,
+ org.eclipse.jface.text
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ClassPath: lib/concordion-1.4.1.jar,
+ lib/ognl-2.6.9.jar,
+ lib/xom-1.2.5.jar,
+ .
