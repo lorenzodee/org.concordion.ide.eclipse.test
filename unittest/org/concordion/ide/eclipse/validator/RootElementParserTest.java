@@ -1,7 +1,8 @@
-package org.concordion.ide.eclipse.parser;
+package org.concordion.ide.eclipse.validator;
 
 import static org.junit.Assert.*;
 
+import org.concordion.ide.eclipse.validator.RootElementParser;
 import org.junit.Test;
 
 /**
