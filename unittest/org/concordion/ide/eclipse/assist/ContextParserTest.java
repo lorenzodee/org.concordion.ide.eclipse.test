@@ -18,7 +18,7 @@ public class ContextParserTest {
 	public void testFindContext() {
 		ContextParser parser = new ContextParser();
 		assertSame(AssistType.ASSERT_EQUALS, parser.findContext(ASSERT_EQ, ASSERT_EQ.indexOf(CURSOR), PFX).getType());
-		assertSame(AssistType.NS_PREFIX, parser.findContext(NS, NS.indexOf(CURSOR), PFX).getType());
+		assertSame(AssistType.PARTIAL_COMMAND, parser.findContext(NS, NS.indexOf(CURSOR), PFX).getType());
 		
 		assertSame(AssistType.UNKNOWN, parser.findContext("", 0, PFX).getType());
 		assertSame(AssistType.UNKNOWN, parser.findContext("asdfsadfsdaf", 3, PFX).getType());
@@ -29,7 +29,7 @@ public class ContextParserTest {
 	public void testFindContextWithPrefix() {
 		ContextParser parser = new ContextParser();
 		AssistContext result = parser.findContext(WITH_CHARS, WITH_CHARS.indexOf(CURSOR), PFX);
-		assertSame(AssistType.NS_PREFIX, result.getType());
+		assertSame(AssistType.PARTIAL_COMMAND, result.getType());
 		assertTrue(result.hasPrefix());
 		assertEquals("assertT", result.getPrefix());
 	}
