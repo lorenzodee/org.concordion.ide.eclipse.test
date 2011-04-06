@@ -10,6 +10,7 @@ public class ContextParserTest {
 	private static final String NS = "<span con:|>";
 	private static final String BLA = "<span bla:|";
 	private static final String WITH_CHARS = "<span con:assertT|";
+	private static final String WITH_PARTIAL_METHOD = "<span con:assertTrue=\"bl|";
 	
 	private static final String PFX = "con";
 	private static final char CURSOR = '|';
@@ -32,5 +33,14 @@ public class ContextParserTest {
 		assertSame(AssistType.PARTIAL_COMMAND, result.getType());
 		assertTrue(result.hasPrefix());
 		assertEquals("assertT", result.getPrefix());
+	}
+
+	@Test
+	public void testFindContextWithPartialMethodName() {
+		ContextParser parser = new ContextParser();
+		AssistContext result = parser.findContext(WITH_PARTIAL_METHOD, WITH_PARTIAL_METHOD.indexOf(CURSOR), PFX);
+		assertSame(AssistType.ASSERT_TRUE, result.getType());
+		assertTrue(result.hasPrefix());
+		assertEquals("bl", result.getPrefix());
 	}
 }
