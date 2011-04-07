@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu
+               id="org.concordion.ide.eclipse.test.menus.testMenu"
+               label="Concordion Plugin Test"
+               mnemonic="P">
+            <command
+                  commandId="org.concordion.ide.eclipse.test.commands.runTestCommand"
+                  icon="icons/logo.gif"
+                  id="org.concordion.ide.eclipse.test.menus.runTestCommand"
+                  mnemonic="T"
+                  tooltip="Runs the Concordion Plugin Tests">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="org.concordion.ide.eclipse.test.toolbars.testToolbar"
+               label="Concordion Plugin Test">
+            <command
+                  commandId="org.concordion.ide.eclipse.test.commands.runTestCommand"
+                  icon="icons/logo.gif"
+                  id="org.concordion.ide.eclipse.test.toolbars.runTestCommand"
+                  mnemonic="T"
+                  tooltip="Runs the Concordion Plugin Tests">
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            id="org.concordion.ide.eclipse.test.commands.category"
+            name="Concordion Plugin Test">
+      </category>
+      <command
+            categoryId="org.concordion.ide.eclipse.test.commands.category"
+            id="org.concordion.ide.eclipse.test.commands.runTestCommand"
+            name="Run Plugin Tests">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="org.concordion.ide.eclipse.test.handlers.RunTestHandler"
+            commandId="org.concordion.ide.eclipse.test.commands.runTestCommand">
+      </handler>
+   </extension>
+
+</plugin>
