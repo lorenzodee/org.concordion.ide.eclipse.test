@@ -9,9 +9,9 @@ public class NewSpecWizardTest {
 
 	@Test
 	public void testTestCaseName() {
-		assertEquals("blaTest.java", NewSpecWizard.fixtureName("bla.html", "Test", Language.JAVA));
-		assertEquals("blaTest.java", NewSpecWizard.fixtureName("bla", "Test", Language.JAVA));
-		assertEquals("blaTest.groovy", NewSpecWizard.fixtureName("bla", "Test", Language.GROOVY));
+		assertEquals("blaTest.java", NewSpecWizard.fixtureName("bla.html", true, Language.JAVA));
+		assertEquals("bla.java", NewSpecWizard.fixtureName("bla", false, Language.JAVA));
+		assertEquals("blaTest.groovy", NewSpecWizard.fixtureName("bla", true, Language.GROOVY));
 	}
 
 }
